@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import { createUser } from '../utils/api'
 import Auth from '../utils/auth';
 
 const Signup = () => {
@@ -9,6 +9,8 @@ const Signup = () => {
     email: '',
     password: '',
   });
+  const [ loggedIn, setLoggedIn ] = useState(false)
+  const [error, setError] = useState ('')
 
 
   // update state based on form input changes
@@ -24,12 +26,16 @@ const Signup = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setError('');
     console.log(formState);
 
     try {
-     console.log('implementCreateUser')
+      const newUser = await createUser(formState)
+      Auth.login(response.token);
+      setLoggedIn(true)
+      console.log(newUser)
     } catch (e) {
-      console.error(e);
+     setError(err.message || 'An Error Occurred During Signup')
     }
   };
 
@@ -39,7 +45,7 @@ const Signup = () => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
           <div className="card-body">
-            {data ? (
+            {loggedIn ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
