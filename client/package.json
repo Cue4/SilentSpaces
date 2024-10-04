@@ -1,7 +1,7 @@
 {
   "name": "client-",
   "version": "1.0.0",
-  "main": "vite.config.js",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
