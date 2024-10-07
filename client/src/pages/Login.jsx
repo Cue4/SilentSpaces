@@ -5,6 +5,7 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
+  const [error , setError] = useState(null)
 
 
   // update state based on form input changes
@@ -41,7 +42,7 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
-            {data ? (
+            {formState ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
