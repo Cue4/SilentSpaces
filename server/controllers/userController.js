@@ -65,6 +65,7 @@ module.exports = {
         console.log('Sup')
     },
 
+
     async deleteUser({params},res){
             try {
                     // find the user to be deleted
@@ -80,5 +81,7 @@ module.exports = {
                     res.status(500).send(error.message);
                 }
     }
+};
+
 };
 
