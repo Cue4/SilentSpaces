@@ -13,5 +13,5 @@ if(process.env.NODE_ENV==='production'){
 }
 app.use(routes)
 db.once('open', () => {
-    console.log(`app listening on ${PORT}`)
+   app.listen(PORT,()=>console.log(`app listening on ${PORT}`))
 })
