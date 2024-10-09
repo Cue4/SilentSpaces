@@ -1,8 +1,10 @@
+
 const router = require("express").Router();
 
 const {createUser, getUsers,getSingleUser}=  require("../../controllers/userController")
 
 console.log("here in the user routes")
+
 
 // const {authMiddleware} = require("../../utils/auth")
 
