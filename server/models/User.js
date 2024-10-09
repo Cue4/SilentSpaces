@@ -1,9 +1,6 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
-// import schema from Book.js
-
-
 const userSchema = new Schema(
   {
     username: {
@@ -23,7 +20,7 @@ const userSchema = new Schema(
     },
 
   },
-  // set this to use virtual below
+  
   {
     toJSON: {
       virtuals: true,

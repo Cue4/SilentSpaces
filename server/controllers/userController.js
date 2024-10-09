@@ -64,4 +64,24 @@ module.exports = {
         }
         console.log('Sup')
     },
+
+
+    async deleteUser({params},res){
+            try {
+                    // find the user to be deleted
+                    const user = await User.findByIdAndDelete(params.id); 
+                    if (!user) return res.status(404).send('User not found');
+                    // send confirmation with details of the deleted user
+                    res.status(200).json({
+                        message: 'User successfully deleted',
+                        deteledUser: user
+                    });
+                } catch (error) {
+                    console.error('Error deleting user:', error);
+                    res.status(500).send(error.message);
+                }
+    }
 };
+
+};
+
