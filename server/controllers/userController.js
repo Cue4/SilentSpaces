@@ -62,5 +62,6 @@ module.exports = {
             console.error(err);
             res.status(500).json({ message: 'Error during login', error: err });
         }
+        console.log('Sup')
     },
 };
