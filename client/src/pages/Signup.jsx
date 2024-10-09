@@ -1,15 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import {createUser} from '../utils/api'
 
 import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
-
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [error , setError] = useState(null)
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -27,7 +29,16 @@ const Signup = () => {
     console.log(formState);
 
     try {
-     console.log('implementCreateUser')
+      const response = await createUser(formState);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
+      setLoggedIn(true)
     } catch (e) {
       console.error(e);
     }
@@ -39,7 +50,7 @@ const Signup = () => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
           <div className="card-body">
-            {data ? (
+            {loggedIn ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
@@ -49,9 +60,9 @@ const Signup = () => {
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
