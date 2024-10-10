@@ -13,3 +13,18 @@ export const createUser = (userData) => {
     
  }
   };
+
+  export const deleteUser = async (userid)=> {
+   try {
+      const response = await fetch(`/api/users/${userid}`,{
+         method: "DELETE",
+         credentials: "include",
+      })
+      if (!response.ok){
+         throw new Error("network is not ok")
+      }
+      const data = await response.json({message:"user deleted"})
+   } catch (err) {
+      console.log(err)
+   }
+  }
