@@ -1,30 +1,30 @@
-export const createUser = async (data) => {
-    console.log('Data From API File', data)
-    try {
-        const response = await fetch('/api/users', {
-            method:'POST', 
-            credentials:'include', 
-            body: JSON.stringify(data), 
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-
-
-        const contentType = response.headers.get('content-type');
-        if (!contentType || !contentType.includes('application/json')) {
-          throw new Error('Server returned non-JSON response');
-        }
+export const createUser = (userData) => {
+    console.log("api js file in client",userData)
+ try {
+    return fetch('/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData),
+      });
+ } catch (err) {
+    console.log(err)
     
-        if (!response.ok) {
-          const errorData = await response.json();
-          throw new Error(errorData.message || 'Failed to create user');
-        }
-    
-        const responseData = await response.json();
-        return responseData;
-      } catch (err) {
-        console.error('Signup error:', err);
-        throw err;
+ }
+  };
+
+  export const deleteUser = async (userid)=> {
+   try {
+      const response = await fetch(`/api/users/${userid}`,{
+         method: "DELETE",
+         credentials: "include",
+      })
+      if (!response.ok){
+         throw new Error("network is not ok")
       }
-}
+      const data = await response.json({message:"user deleted"})
+   } catch (err) {
+      console.log(err)
+   }
+  }

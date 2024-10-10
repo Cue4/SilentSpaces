@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { createUser } from '../utils/api'
+import {createUser} from '../utils/api'
+
 import Auth from '../utils/auth';
 
 const Signup = () => {
   const [formState, setFormState] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
-  const [ loggedIn, setLoggedIn ] = useState(false)
-  const [error, setError] = useState ('')
-
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [error , setError] = useState(null)
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -30,10 +30,23 @@ const Signup = () => {
     console.log(formState);
 
     try {
+<<<<<<< HEAD
       const newUser = await createUser(formState)
       Auth.login(response.token);
       setLoggedIn(true)
       console.log(newUser)
+=======
+      const response = await createUser(formState);
+
+      if (!response.ok) {
+        throw new Error('something went wrong!');
+      }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
+      setLoggedIn(true)
+>>>>>>> 922ef3b38be7cc027c052a8879db2f9129b6dbbb
     } catch (e) {
      setError(err.message || 'An Error Occurred During Signup')
     }
@@ -55,9 +68,9 @@ const Signup = () => {
                 <input
                   className="form-input"
                   placeholder="Your username"
-                  name="name"
+                  name="username"
                   type="text"
-                  value={formState.name}
+                  value={formState.username}
                   onChange={handleChange}
                 />
                 <input
