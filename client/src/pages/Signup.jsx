@@ -30,12 +30,6 @@ const Signup = () => {
     console.log(formState);
 
     try {
-<<<<<<< HEAD
-      const newUser = await createUser(formState)
-      Auth.login(response.token);
-      setLoggedIn(true)
-      console.log(newUser)
-=======
       const response = await createUser(formState);
 
       if (!response.ok) {
@@ -46,7 +40,6 @@ const Signup = () => {
       console.log(user);
       Auth.login(token);
       setLoggedIn(true)
->>>>>>> 922ef3b38be7cc027c052a8879db2f9129b6dbbb
     } catch (e) {
      setError(err.message || 'An Error Occurred During Signup')
     }
