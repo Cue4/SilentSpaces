@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 import Auth from '../utils/auth';
 
 const Login = (props) => {
@@ -48,7 +49,9 @@ const Login = (props) => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+              <section>
+                
+ <form onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your email"
@@ -73,6 +76,8 @@ const Login = (props) => {
                   Submit
                 </button>
               </form>
+              </section>
+             
             )}
 
             {error && (
