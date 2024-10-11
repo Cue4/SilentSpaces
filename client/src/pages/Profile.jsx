@@ -15,7 +15,7 @@ const Profile = () => {
   }
 
   if (isLoading) {
-    return ;
+    return <div>Loading..</div>;
   }
 
   // if (!profile?.name) {
@@ -35,24 +35,20 @@ const Profile = () => {
       <div>
         <ChatComponent/>
       </div>
-    </section>
-  );
-};
-return (
-  <div>
-    {isLoading ? (
-      <div>Loading...</div>
-    ) : (
-      <>
+      <div>
         {Auth.loggedIn() && Auth.getProfile().data._id === profileId ? (
           <Navigate to={`/profiles/${profileId}`}/>
         ) : (
           <ProfileContent />
         )}
-      </>
-    )}
+     
   </div>
-);
+    </section>
+  );
+};
+
+  
+
 
 
 export default Profile;

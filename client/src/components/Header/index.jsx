@@ -12,11 +12,22 @@ const Header = () => {
   useEffect(() => {
     getCredentials()
   },[])
+  
   const getCredentials = () => {
-    const userData = Auth.getProfile()
-    const userId = userData.data._id
-    setProfileId(userId)
-  }
+    try {
+      const userData = Auth.getProfile();
+      if (userData && userData.data && userData.data._id) {
+        setProfileId(userData.data._id);
+      }
+    } catch (error) {
+      console.error("Error fetching profile data:", error);
+    }
+  };
+  // const getCredentials = () => {
+  //   const userData = Auth.getProfile()
+  //   const userId = userData.data._id
+  //   setProfileId(userId)
+  // }
 
 
   return (
@@ -33,9 +44,11 @@ const Header = () => {
         <div>
           {Auth.loggedIn() ? (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to={`/profiles/${profileId}`}>
-                View My Profile!!!!!!!!
-              </Link>
+               {profileId && (
+                <Link className="btn btn-lg btn-primary m-2" to={`/profiles/${profileId}`}>
+                  View My Profile
+                </Link>
+              )}
               <button className="btn btn-lg btn-light m-2" onClick={logout}>
                 Logout
               </button>
