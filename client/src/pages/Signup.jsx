@@ -26,6 +26,7 @@ const Signup = () => {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+    setError('');
     console.log(formState);
 
     try {
@@ -40,7 +41,7 @@ const Signup = () => {
       Auth.login(token);
       setLoggedIn(true)
     } catch (e) {
-      console.error(e);
+     setError(err.message || 'An Error Occurred During Signup')
     }
   };
 

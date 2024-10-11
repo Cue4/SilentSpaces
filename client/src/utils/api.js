@@ -46,6 +46,7 @@ export const createUser = (userData) => {
   }
 
 
+
   // New methods for chatting
 export const fetchMessages = async () => {
    try {
@@ -76,3 +77,4 @@ export const fetchMessages = async () => {
      throw err;
    }
  };
+

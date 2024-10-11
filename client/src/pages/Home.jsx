@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-center">
-    hello
+    Silent Spaces
       </div>
     </main>
   );
