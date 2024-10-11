@@ -1,21 +1,20 @@
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
-let socket;
+// let socket;
 
-const connectSocket = () => {
-  if (!socket) {
-    socket = io('http://localhost:3001');
-    socket.on('connect', () => {
-      console.log('Connected to server');
-    });
-  }
-};
+// const connectSocket = () => {
+//   if (!socket) {
+//     socket = io('http://localhost:3001');
+//     socket.on('connect', () => {
+//       console.log('Connected to server');
+//     });
+//   }
+// };
 
 
 export const createUser = (userData) => {
     console.log("api js file in client",userData)
  try {
-   connectSocket() 
     return fetch('/api/users', {
         method: 'POST',
         headers: {
@@ -31,7 +30,7 @@ export const createUser = (userData) => {
 
   export const deleteUser = async (userid)=> {
    try {
-      connectSocket()
+    
       const response = await fetch(`/api/users/${userid}`,{
          method: "DELETE",
          credentials: "include",
@@ -50,8 +49,11 @@ export const createUser = (userData) => {
   // New methods for chatting
 export const fetchMessages = async () => {
    try {
-     connectSocket()
-     const response = await fetch('/api/messages');
+    
+     const response = await fetch('/api/chat', {
+      method: 'GET',
+      credentials: 'include',
+     });
      const data = await response.json();
      return data;
    } catch (err) {
@@ -62,8 +64,8 @@ export const fetchMessages = async () => {
  
  export const sendMessage = async (message) => {
    try {
-     connectSocket()
-     const response = await fetch('/api/messages', {
+   
+     const response = await fetch('/api/chat', {
        method: 'POST',
        headers: {
          'Content-Type': 'application/json',

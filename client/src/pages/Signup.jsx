@@ -12,6 +12,7 @@ const Signup = () => {
   });
   const [loggedIn, setLoggedIn] = useState(false)
   const [error , setError] = useState(null)
+  
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -40,6 +41,7 @@ const Signup = () => {
       console.log(user);
       Auth.login(token);
       setLoggedIn(true)
+    
     } catch (e) {
      setError(err.message || 'An Error Occurred During Signup')
     }

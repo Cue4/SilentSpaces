@@ -1,17 +1,21 @@
 import { Navigate, useParams } from 'react-router-dom';
-
+import { useState } from 'react';
 import Auth from '../utils/auth';
+import ChatComponent from '../components/ChatComponent.jsx'
 
 const Profile = () => {
   const { profileId } = useParams();
+  console.log(profileId)
 
+  const [loading, setLoading] = useState('Loading...')
+  const [isLoading, setIsLoading] = useState(true)
   // Use React Router's `<Navigate />` component to redirect to personal profile page if username is yours
   if (Auth.loggedIn() && Auth.getProfile().data._id === profileId) {
-    return <Navigate to="/me" />;
+    return <Navigate to={`/profiles/${profileId}`}/>;
   }
 
-  if (loading) {
-    return <div>Loading...</div>;
+  if (isLoading) {
+    return ;
   }
 
   // if (!profile?.name) {
@@ -22,26 +26,33 @@ const Profile = () => {
   //     </h4>
   //   );
   // }
-
   return (
-    <div>
+    <section>
       <h2 className="card-header">
         {profileId ? `dude` : 'Your'} friends have endorsed these
         skills...
       </h2>
-
-      {/* {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
-        />
-      )}
-
-      <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
-      </div> */}
-    </div>
+      <div>
+        <ChatComponent/>
+      </div>
+    </section>
   );
 };
+return (
+  <div>
+    {isLoading ? (
+      <div>Loading...</div>
+    ) : (
+      <>
+        {Auth.loggedIn() && Auth.getProfile().data._id === profileId ? (
+          <Navigate to={`/profiles/${profileId}`}/>
+        ) : (
+          <ProfileContent />
+        )}
+      </>
+    )}
+  </div>
+);
+
 
 export default Profile;
