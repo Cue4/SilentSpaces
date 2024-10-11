@@ -8,20 +8,21 @@ module.exports= {
         try {
             const { senderId, receiverId, content } = req.body;
             
-            const newMessage = new Chat({
+            const newMessage =  Chat.create({
               senderId,
               receiverId,
               content
             });
         
-            const savedMessage = await newMessage.save();
-            res.status(201).json(savedMessage);
+            // const savedMessage = await newMessage.save();
+            res.status(201).json(newMessage);
           } catch (err) {
+            console.error(err)
             res.status(500).json(err);
           }
     },
 
-    async recieveChats(req, res) {
+    async receiveDirectChats(req, res) {
         try {
             const { senderId, receiverId } = req.params;
             
@@ -36,5 +37,17 @@ module.exports= {
           } catch (err) {
             res.status(500).json(err);
           }
+    },
+
+
+    async allChats(req, res) {
+      try {
+       const chatlist = await Chat.find();
+       res.status(200).json(chatlist) 
+      } catch (err) {
+        console.error(err)
+        res.status(500).json(err)
+        
+      }
     }
 }

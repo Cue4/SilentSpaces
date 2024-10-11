@@ -1,13 +1,9 @@
 const router = require('express').Router()
-const {startChat, recieveChats} = require('../../controllers/chatController')
+const {startChat, receiveDirectChats, allChats} = require('../../controllers/chatController')
 
 
-router.route('/').get(recieveChats).post(startChat);
-
-
-
-
-
+router.route('/').get(allChats).post(startChat);
+router.get('/:senderId/:receiverId', receiveDirectChats);
 
 
 module.exports = router;

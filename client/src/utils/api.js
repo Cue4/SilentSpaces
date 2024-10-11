@@ -61,6 +61,20 @@ export const fetchMessages = async () => {
      throw err;
    }
  };
+
+
+ export const fetchDirectMessages = async ({senderId, receiverId}) => {
+  try {
+    const response = await fetch(`/api/chat/${senderId}/${receiverId}`, {
+      method: 'GET',
+      credentials: 'include'
+    });
+    const data = await response.json();
+    return data
+  } catch (err) {
+    console.log(err)    
+  }  
+ }
  
  export const sendMessage = async (message) => {
    try {
