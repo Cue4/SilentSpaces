@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
-import '../Header/header.css'
+
 
 const Header = () => {
   const [profileId, setProfileId] = useState('')
@@ -57,12 +57,14 @@ const Header = () => {
             </>
           ) : (
             <>
-              <Link className="btn btn-lg btn-primary m-2" to="/login">
+            <div className="access">
+              <Link className="loginbtn" to="/login">
                 Login
               </Link>
-              <Link className="btn btn-lg btn-light m-2" to="/signup">
+              <Link className="signupbtn" to="/signup">
                 Signup
               </Link>
+              </div>
             </>
           )}
         </div>

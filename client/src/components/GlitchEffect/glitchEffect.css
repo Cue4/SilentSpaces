@@ -1,0 +1,67 @@
+@keyframes glitch {
+    0% {
+      transform: none;
+    }
+    20% {
+      transform: skew(2deg, 2deg);
+    }
+    40% {
+      transform: none;
+    }
+    60% {
+      transform: skew(-2deg, -2deg);
+    }
+    80% {
+      transform: none;
+    }
+  }
+  
+  .glitch {
+    animation: glitch 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes glitch-background {
+    0% {
+      background-position: 0 0;
+    }
+    20% {
+      background-position: 5px 5px;
+    }
+    40% {
+      background-position: 0 0;
+    }
+    60% {
+      background-position: -5px -5px;
+    }
+    80% {
+      background-position: 0 0;
+    }
+  }
+  
+  .glitch-bg {
+    background: url('../../assets/images/your-background-image.jpg'); /* Ensure this is the correct path */
+    background-size: cover;
+    animation: glitch-background 1.5s ease-in-out infinite;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 3rem;
+    margin: 0;
+    color: red;
+  }
+  
+  .description {
+    margin-top: 10px;
+    font-size: 1.5rem;
+  }
+  

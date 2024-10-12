@@ -48,10 +48,10 @@ const Login = (props) => {
   }
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
+    <main className="main-content">
+      <div className="submission">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
+          <h4 className="title">Login</h4>
           <div className="card-body">
             <form onSubmit={handleFormSubmit}>
               <input
@@ -71,7 +71,7 @@ const Login = (props) => {
                 onChange={handleChange}
               />
               <button
-                className="btn btn-block btn-info"
+                className="subbtn"
                 style={{ cursor: 'pointer' }}
                 type="submit"
               >

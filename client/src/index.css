@@ -3,3 +3,114 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Header */
+
+ /* .header {
+    background-image: url('../../assets/Image.png'); /* Adjust the path based on your file structure */
+  /* background-size: cover;
+  background-position: center;
+  height: 100vh; */
+
+
+  /* .div-header {
+    display: flex;
+    flex-direction: ;
+  }   */
+  
+  .h1 {
+    text-align: center;
+    font-size: 36px; 
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+  }
+  
+  .p1 {
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  .profile {
+    background-color: #007bff; /* Blue background */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .profile:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .logoutbtn {
+    background-color: #dc3545; 
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  
+  .logoutbtn:hover {
+    background-color: #c82333; 
+  }
+
+  .access {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .loginbtn {
+    background-color: #286f34; 
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .loginbtn:hover {
+    background-color: #9d9805; 
+  }
+
+  .signupbtn {
+    background-color: #9d9805; 
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+  }
+  
+  .signupbtn:hover {
+    background-color: #286f34; 
+  }
+  a.title {
+    text-decoration: none; 
+    color: inherit; 
+  }
+
+  /* Login */
+
+  .card {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
