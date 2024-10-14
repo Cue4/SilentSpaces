@@ -100,13 +100,97 @@ body {
   }
 
   /* Login */
+.title {
+    color: rgb(23, 75, 134);
+    font-size: 25px;
+    
+}
+.card {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1rem;
+    max-width: 50rem;
+    min-width: 20rem;
+    margin-top: 6rem;
+}
 
-  .card {
+.form-input{
+    height: 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.3);
+    padding: .5rem;
+}
+
+.subbtn {
+    height: 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: inset 4px 4px 8px rgba(216, 211, 211, 0.3);
+    padding: .5rem;
+    background-color: rgb(96, 153, 217);
+    color: white;
+}
+  
+ /* Signup */
+ 
+ body { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.login-container{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.login-container>*{
+    flex: 1;
+}
+
+.greycard-container{
+    background-color: #d3d3d3;
+}
+
+.img-container{
+    max-width: 35rem;
+    min-width: 20rem;
+}
+
+.img-container img{
+    width: 100%;
+}
+
+.signupForm{
     display: flex;
     flex-direction: column;
-  }
-  
-  
+    padding: 2rem;
+    gap: 1rem;
+    max-width: 50rem;
+    min-width: 20rem;
+    margin-top: 6rem;
+}
+
+.form-input{
+    height: 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.3);
+    padding: .5rem;
+}
+
+.btn {
+    height: 2rem;
+    border-radius: 12px;
+    border: none;
+    box-shadow: inset 4px 4px 8px rgba(0,0,0,0.3);
+    padding: .5rem;
+    background-color: black;
+    color: white;
+}
 
 /* Footer */
 

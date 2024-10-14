@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom'; // Use Navigate for redirection after login
 import Auth from '../utils/auth';
+import { loginUser } from '../utils/api'
+
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -21,13 +23,15 @@ const Login = (props) => {
     event.preventDefault();
     console.log(formState);
     try {
-      // Assuming Auth.login() is the function to log the user in
-      await Auth.login(formState.email, formState.password);
-
-      // If login is successful, set the redirection state
-      if (Auth.loggedIn()) {
-        setRedirectToProfile(true);
+    const response = await loginUser(formState)
+        
+      if (!response.ok) {
+        throw new Error('something went wrong!');
       }
+
+      const { token, user } = await response.json();
+      console.log(user);
+      Auth.login(token);
     
     } catch (e) {
       console.error(e);
@@ -48,11 +52,12 @@ const Login = (props) => {
   }
 
   return (
-    <main className="main-content">
+    <main className="login-content">
       <div className="submission">
         <div className="card">
           <h4 className="title">Login</h4>
           <div className="card-body">
+     
             <form onSubmit={handleFormSubmit}>
               <input
                 className="form-input"
@@ -78,7 +83,8 @@ const Login = (props) => {
                 Submit
               </button>
             </form>
-
+        
+            
             {error && (
               <div className="my-3 p-3 bg-danger text-white">
                 {error.message}

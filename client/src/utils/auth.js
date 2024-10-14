@@ -5,6 +5,7 @@ import decode from 'jwt-decode';
 class AuthService {
   // get user data
   getProfile() {
+    const token = this.getToken();
     console.log('returns from get profile method',decode(this.getToken()))
     return decode(this.getToken());
   }
@@ -36,7 +37,10 @@ class AuthService {
   login(idToken) {
     // Saves user token to localStorage
     localStorage.setItem('id_token', idToken);
-    window.location.assign('/');
+    let userData = this.getProfile()
+    console.log(userData)
+    let userId = userData.data._id
+    window.location.assign(`/profiles/${userId}`);
   }
 
   logout() {
