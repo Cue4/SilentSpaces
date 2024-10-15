@@ -1,7 +1,5 @@
 const {Chat, User} = require('../models/')
 
-
-
 module.exports= {
 
     async startChat(req, res) {

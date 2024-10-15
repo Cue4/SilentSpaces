@@ -179,7 +179,7 @@ const Profile = () => {
             <Link to="/" className="flex items-center mb-4">
               <span className="text-xl">🏠 Home</span>
             </Link>
-            <Link to="/messages" className="flex items-center mb-4">
+            <Link to="/message" className="flex items-center mb-4">
               <span className="text-xl">💬 Messages</span>
             </Link>
             <Link to="/topics" className="flex items-center mb-4">

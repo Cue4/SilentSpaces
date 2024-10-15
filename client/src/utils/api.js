@@ -106,3 +106,18 @@ export const fetchMessages = async () => {
    }
  };
 
+ export const deleteMessage = async (receiverId)=> {
+  try {
+   
+     const response = await fetch(`/api/chat/${receiverId}`,{
+        method: "DELETE",
+        credentials: "include",
+     })
+     if (!response.ok){
+        throw new Error("network is not ok")
+     }
+     const data = await response.json({message:"chat deleted"})
+  } catch (err) {
+     console.log(err)
+  }
+ }

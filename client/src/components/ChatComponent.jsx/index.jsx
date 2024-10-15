@@ -3,14 +3,16 @@ import { sendMessage } from '../../utils/api'
 
 const ChatComponent = () => {
     const [message , setMessage] = useState('');
+    const [messages, setmessages] = useState([]);
 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (message.trim()){
             try {
-              await sendMessage(message);
-              setMessage('');
+              await sendMessage(messages, message);
+              setmessages([...messages, message]);
+              setMessage('')
             } catch (err) {
                 console.log('error sending message', err)
                 
@@ -29,7 +31,13 @@ const ChatComponent = () => {
         />
         <button type="submit">Send</button>
       </form>
-      {/* Add a way to display messages here */}
+      <div className="message-list">
+        {messages.map((msg, index) => (
+          <div key={index} className="message">
+            {msg}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

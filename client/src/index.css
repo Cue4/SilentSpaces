@@ -100,7 +100,7 @@ body {
   }
 
   /* Login */
-.title {
+/* .title {
     color: rgb(23, 75, 134);
     font-size: 25px;
     
@@ -131,7 +131,7 @@ body {
     padding: .5rem;
     background-color: rgb(96, 153, 217);
     color: white;
-}
+} */
   
  /* Signup */
  
@@ -198,3 +198,6 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/* Messages */
+

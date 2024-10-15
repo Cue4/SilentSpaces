@@ -7,6 +7,7 @@ import Profile from './pages/Profile.jsx';
 import Signup from './pages/Signup.jsx';
 import Login from './pages/Login.jsx';
 import ErrorPage from './pages/ErrorPage.jsx';
+import Message from './pages/Messages.jsx'
 import './index.css';
 
 const router = createBrowserRouter([
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: '/profiles/:profileId',
         element: <Profile />
       }, 
+      {
+        path: '/message',
+        element:<Message />
+      },
     ]
   },
 ]);

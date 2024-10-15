@@ -3,6 +3,7 @@ import { Outlet } from 'react-router-dom';
 import { fetchMessages } from './utils/api';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import GlitchEffect from './components/GlitchEffect/glitchEffect';
 
 function App() {
 
