@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Auth from '../../utils/auth';
+// import './index.css';
 
 
 const Header = () => {
@@ -21,15 +22,9 @@ const Header = () => {
         setProfileId(userData.data._id);
       }
     } catch (error) {
-      // console.error("Error fetching profile data:", error);
+
     }
   };
-  // const getCredentials = () => {
-  //   const userData = Auth.getProfile()
-  //   const userId = userData.data._id
-  //   setProfileId(userId)
-  // }
-
 
   return (
     <header className="header">
@@ -39,18 +34,13 @@ const Header = () => {
            Silent Spaces
           </h1>
         </Link>
+        <br/>
         <p className="p1">
           Meet your new programming pals.
         </p>
         <div>
           {Auth.loggedIn() ? (
             <>
-               {/* {profileId && (
-                <Link to={`/profiles/${profileId}`}>
-                <button className="profile" onClick={`/profiles/${profileId}`}>View My Profile</button>
-              </Link>
-              
-              )} */}
               <button className="logoutbtn" onClick={logout}>
                 Logout
               </button>
