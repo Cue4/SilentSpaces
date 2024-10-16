@@ -114,7 +114,7 @@ import { Navigate, useParams, Link } from 'react-router-dom'; // Don't forget to
 import { useState, useEffect } from 'react';
 import Auth from '../utils/auth';
 import ChatComponent from '../components/ChatComponent.jsx';
-import './index.css';
+// import './index.css';
 
 const Profile = () => {
   const { profileId } = useParams();

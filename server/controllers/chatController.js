@@ -37,7 +37,6 @@ module.exports= {
           }
     },
 
-
     async allChats(req, res) {
       try {
        const chatlist = await Chat.find();
@@ -45,7 +44,6 @@ module.exports= {
       } catch (err) {
         console.error(err)
         res.status(500).json(err)
-        
       }
     }
 }

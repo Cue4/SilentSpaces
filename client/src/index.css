@@ -100,7 +100,7 @@ body {
   }
 
   /* Login */
-/* .title {
+.title {
     color: rgb(23, 75, 134);
     font-size: 25px;
     
@@ -131,7 +131,7 @@ body {
     padding: .5rem;
     background-color: rgb(96, 153, 217);
     color: white;
-} */
+}
   
  /* Signup */
  
@@ -201,3 +201,151 @@ body {
 
 /* Messages */
 
+
+
+/* Profile */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+/* Sidebar */
+aside {
+  background-color: #2d3748; /* Dark gray */
+  color: #f9f9f9;
+  width: 16rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+aside nav a {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #f9f9f9;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+aside nav a:hover {
+  background-color: #4a5568; /* Slightly lighter gray on hover */
+}
+
+aside nav a span {
+  margin-left: 0.75rem;
+}
+
+aside .mt-auto a {
+  margin-top: auto;
+  color: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+aside .mt-auto a:hover {
+  background-color: #718096; /* Hover effect */
+}
+
+/* Main content styles */
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+}
+
+main p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+main .text-center h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+main .text-center p {
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+main .text-center label {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+main .text-center select {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+main .text-center button {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+main .text-center button.bg-black {
+  background-color: #2d3748;
+  color: #f9f9f9;
+}
+
+main .text-center button.bg-black:hover {
+  background-color: #1a202c;
+}
+
+main .text-center button.border {
+  border: 2px solid #2d3748;
+  color: #2d3748;
+}
+
+main .text-center button.border:hover {
+  background-color: #2d3748;
+  color: #f9f9f9;
+}

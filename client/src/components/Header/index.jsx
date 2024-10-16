@@ -21,7 +21,7 @@ const Header = () => {
         setProfileId(userData.data._id);
       }
     } catch (error) {
-      console.error("Error fetching profile data:", error);
+      // console.error("Error fetching profile data:", error);
     }
   };
   // const getCredentials = () => {
