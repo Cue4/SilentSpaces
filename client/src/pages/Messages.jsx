@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import {fetchMessages, fetchDirectMessages, sendMessage, deleteMessage} from '../utils/api';
 import {useState, useEffect} from 'react'
 import React from 'react';
-import '../index.css'; // Ensure this file contains the styles provided earlier.
+import '../index.css'; 
 
 const Messages = () => {
     const [messages,setMessages] = useState([]);

@@ -64,13 +64,15 @@ p {
 }
 
 .logoutbtn {
-  background-color: #dc3545;
-  color: white;
+  background-color: #6f9557;
+  color: rgb(10, 9, 9);
   padding: 10px 10px;
   border: none;
   border-radius: 5px;
   font-size: 12px;
   cursor: pointer;
+  display: flex;
+  justify-content: right;
 }
 
 .logoutbtn:hover {

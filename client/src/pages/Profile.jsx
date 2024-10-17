@@ -47,9 +47,9 @@ const Profile = () => {
         {/* Sidebar */}
         <aside className="w-64 bg-gray-200 p-6 flex flex-col">
           <nav className="flex-grow">
-            <Link to="/" className="flex items-center mb-4">
-              <span className="text-xl">🏠 Home</span>
-            </Link>
+            <h2 to="/" className="flex items-center mb-4">
+              <span className="text-xl">🏠 PROFILE</span>
+            </h2>
             <Link to="/message" className="flex items-center mb-4">
               <span className="text-xl">💬 Messages</span>
             </Link>
@@ -60,9 +60,6 @@ const Profile = () => {
           <div className="mt-auto">
             <Link to="/help" className="flex items-center mb-4">
               <span className="text-xl">❓ Help & Support</span>
-            </Link>
-            <Link to="/logout" className="flex items-center">
-              <span className="text-xl">🚪 Log out</span>
             </Link>
           </div>
         </aside>
