@@ -1,12 +1,14 @@
-
 # Silent Spaces
 
 ## Table of Contents
 - Description
+- Features
 - Usage
 - Installation
 - API Routes
-- Walkthrough Video
+- Deployment
+- ScreenShot
+- Authors
 - License
 
 
