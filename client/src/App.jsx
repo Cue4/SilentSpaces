@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
-import { fetchMessages } from './utils/api';
+import { fetchMessages, fetchDirectMessages, sendMessage, deleteMessage } from './utils/api';
 import Header from './components/Header';
 import Footer from './components/Footer';
 

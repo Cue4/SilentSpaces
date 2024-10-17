@@ -55,7 +55,7 @@ const Login = (props) => {
     <main className="login-content">
       <div className="submission">
         <div className="card">
-          <h4 className="title">Login</h4>
+          <h4 className="title"></h4>
           <div className="card-body">
      
             <form onSubmit={handleFormSubmit}>

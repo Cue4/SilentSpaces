@@ -4,13 +4,14 @@ module.exports= {
 
     async startChat(req, res) {
         try {
-            const { senderId, receiverId, content } = req.body;
-            
-            const newMessage =  Chat.create({
+            const { senderId, receiverId, content } = req.body.message;
+            console.log(req.body);
+            const newMessage = await Chat.create({
               senderId,
               receiverId,
               content
             });
+            console.log(newMessage);
         
             // const savedMessage = await newMessage.save();
             res.status(201).json(newMessage);
@@ -45,5 +46,7 @@ module.exports= {
         console.error(err)
         res.status(500).json(err)
       }
-    }
+    },
+
+  
 }
