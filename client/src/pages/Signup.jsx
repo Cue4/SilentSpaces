@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {createUser} from '../utils/api'
-import Image from '../assets/image.png';
+import Image from '../assets/image2.png';
 import Auth from '../utils/auth';
 
 const defaultTitle = {
