@@ -1,5 +1,426 @@
-body { 
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+  margin: 15px;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #718096;
+}
+
+/* Header */
+
+body {
+  /* background: linear-gradient(135deg, #637999 0%, #c3cfe2 100%); */
+  background: url('assets/Image.png');
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #bd45c8;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+  text-align: center;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+}
+
+.profile {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.profile:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.logoutbtn {
+  background-color: #6f9557;
+  color: rgb(10, 9, 9);
+  padding: 10px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: right;
+}
+
+.logoutbtn:hover {
+  background-color: #c82333;
+}
+
+.access {
+  display: flex;
+  justify-content: space-around;
+}
+
+.loginbtn {
+  color: black;
+  padding: 15px 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.loginbtn:hover {
+  color: rgb(96, 130, 87);
+}
+
+.signupbtn {
+  color: black;
+  padding: 15px 20px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.signupbtn:hover {
+  color: rgba(203, 210, 161, 0.725);
+}
+
+a.title {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Login */
+
+.subbtn {
+  height: 3rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: inset 4px 4px 8px rgba(216, 211, 211, 0.3);
+  padding: 0.5rem;
+  background-color:rgba(149, 243, 98, 0.725);
+  font-size: 18px;
+  color: black;
+}
+
+/* Signup */
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.login-container > * {
+  flex: 1;
+}
+
+.greycard-container {
+  background-color: #d3d3d3;
+}
+
+.img-container {
+  max-width: 35rem;
+  min-width: 20rem;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 1rem;
+  max-width: 50rem;
+  min-width: 20rem;
+  margin-top: 6rem;
+}
+
+.form-input {
+  height: 2rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+}
+
+.btn {
+  height: 2rem;
+  border-radius: 12px;
+  border: none;
+  box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+}
+
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+}
+
+/* Messages */
+
+.message-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+  gap: 20px; /* Space between grid items */
+  padding: 20px;
+  justify-items: center;
+}
+
+/* Container for each message card */
+.message-space {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.message-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 300px;
+  width: 100%;
+  transition: transform 0.2s ease-in-out;
+}
+
+.message-card:hover {
+  transform: scale(1.05);
+}
+
+.messages-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.message-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.message-card p {
+  margin: 10px 0;
+  color: #666;
+}
+
+.message-timestamp {
+  font-size: 0.8rem;
+  color: #999;
+  text-align: right;
+}
+.message-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.message-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.send-message-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.send-message-btn:hover {
+  background-color: #45a049;
+}
+
+
+
+/* Profile */
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+  background-color: #f9f9f9;
+  height: 100%;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+p {
+  color: #666;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+/* Sidebar */
+aside {
+  background-color: #2d3748; /* Dark gray */
+  color: #f9f9f9;
+  width: 16rem;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+aside nav a {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  color: #f9f9f9;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+aside nav a:hover {
+  background-color: #4a5568; /* Slightly lighter gray on hover */
+}
+
+aside nav a span {
+  margin-left: 0.75rem;
+}
+
+aside .mt-auto a {
+  margin-top: auto;
+  color: #f9f9f9;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s;
+}
+
+aside .mt-auto a:hover {
+  background-color: #718096; /* Hover effect */
+}
+
+/* Main content styles */
+main {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+main header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+main h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+}
+
+main p {
+  font-size: 1rem;
+  color: #4a5568;
+}
+
+main .text-center h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2d3748;
+}
+
+main .text-center p {
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+main .text-center label {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+main .text-center select {
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 1px solid #ccc;
+}
+
+main .text-center button {
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+main .text-center button.bg-black {
+  background-color: #2d3748;
+  color: #f9f9f9;
+}
+
+main .text-center button.bg-black:hover {
+  background-color: #1a202c;
+}
+
+main .text-center button.border {
+  border: 2px solid #2d3748;
+  color: #2d3748;
+}
+
+main .text-center button.border:hover {
+  background-color: #2d3748;
+  color: #f9f9f9;
 }

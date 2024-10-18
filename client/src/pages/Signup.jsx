@@ -1,8 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {createUser} from '../utils/api'
-
+import Image from '../assets/image.png';
 import Auth from '../utils/auth';
+
+const defaultTitle = {
+  text: "Silent Spaces, where words connect.",
+};
+
+const inspomssg = {
+  text: "Engage in meaningful conversations, distraction-free.",
+};
+
+const styles = {
+  Text: {
+    color: "#030303",
+    fontSize: "32px",
+    fontFamily: "Poppins",
+    fontWeight: 700,
+    lineHeight: "38px",
+    textAlign: "center",
+  },
+}; 
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -12,6 +31,7 @@ const Signup = () => {
   });
   const [loggedIn, setLoggedIn] = useState(false)
   const [error , setError] = useState(null)
+  
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -23,9 +43,10 @@ const Signup = () => {
     });
   };
 
-  // submit form
+// submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
+ 
     console.log(formState);
 
     try {
@@ -39,8 +60,9 @@ const Signup = () => {
       console.log(user);
       Auth.login(token);
       setLoggedIn(true)
+    
     } catch (e) {
-      console.error(e);
+     setError(err.message || 'An Error Occurred During Signup')
     }
   };
 
@@ -48,15 +70,27 @@ const Signup = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-lg-10">
         <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <h4 className="card-header bg-dark text-light p-2"></h4>
           <div className="card-body">
             {loggedIn ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success!
+                <Link to="/profiles/:profileId"></Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
+        <section className="login-container">
+<div className="greycard-container">
+<div className="img-container">
+<img src={'client/src/assets/Image.png'} alt="" />
+</div>
+
+<div style={styles.Text}>
+  {defaultTitle.text}
+  <p>{inspomssg.text}</p>
+</div>
+</div> 
+
+              <form className="signupForm" onSubmit={handleFormSubmit}>
                 <input
                   className="form-input"
                   placeholder="Your username"
@@ -89,6 +123,7 @@ const Signup = () => {
                   Submit
                 </button>
               </form>
+             </section>
             )}
 
             {error && (
